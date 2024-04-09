@@ -1,25 +1,25 @@
-#### RGSciences
+### RGSciences
 
 This is a clone project of the [RGSciences](https://esg.rgsciences.com/) website, built using Next.js, Tailwind CSS, and TypeScript. The aim was to achieve the same functionality and appearance as the original website, but with potentially different technical tools and enhancements.
 
-##### Project Details
+#### Project Details
 
 - **Original Website**: [RGSciences](https://esg.rgsciences.com/)
 - **Project Duration**: Completed within four days.
 
-##### Further Development
+#### Further Development
 
 - **Data Migration**: Consider migrating data to Firebase or Sanity.io for enhanced scalability and maintainability.
 - **Additional Features**: Explore adding new features or enhancements to improve user experience and functionality.
 
-##### Features
+#### Features
 
 - **Next.js**: A React framework for building server-side rendered and statically generated applications.
 - **Tailwind CSS**: A utility-first CSS framework for building custom designs quickly.
 - **TypeScript**: A statically typed superset of JavaScript that enhances code quality and developer productivity.
 - **Additional Libraries**: Integration of additional libraries like AOS, React Share, React Select, Sweetalert2, Swiper, and more for enhanced functionality.
 
-##### Installation
+#### Installation
 
 1. Clone the repository:
 
@@ -33,7 +33,7 @@ This is a clone project of the [RGSciences](https://esg.rgsciences.com/) website
    npm install
    ```
 
-##### Usage
+#### Usage
 
 - **Development**: Start the development server:
 
