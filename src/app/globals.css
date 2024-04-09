@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-pagination-color: #5ab163;
+}
+
+@layer utilities {
+  .bg-cover-100 {
+    background-size: 100% 100%;
+  }
+
+  .box-shadow-sm {
+    box-shadow: 0 0 10px #00000033;
+  }
+
+  .box-shadow-lg {
+    box-shadow: 0 0 40px #00000040;
+  }
+
+  .drop-shadow-sm {
+    filter: drop-shadow(0 0 10px #0000004d);
+  }
+
+  .drop-shadow-lg {
+    filter: drop-shadow(0 0 20px #0000004d);
+  }
+}
+
+* {
+  @apply box-border p-0 m-0;
+}
+
+body,
+html {
+  @apply p-0 m-0 min-h-screen bg-darkGrey text-white scroll-smooth font-segoe;
+}
+
+/*tailwind container doesn't work properly in chrome*/
+.custom-container {
+  @apply w-full pl-[1rem] pr-[1rem];
+}
+@media (min-width: 640px) {
+  .custom-container {
+    @apply pl-[2rem] pr-[2rem];
+  }
+}
+@media (min-width: 768px) {
+  .custom-container {
+    @apply pl-[3rem] pr-[3rem];
+  }
+}
+@media (min-width: 1024px) {
+  .custom-container {
+    @apply pl-[5rem] pr-[5rem];
+  }
+}
+@media (min-width: 1280px) {
+  .custom-container {
+    @apply pl-[7rem] pr-[7rem];
+  }
+}
+
+.navglass {
+  @apply bg-[#00000033] backdrop-blur-[30px] transition-all duration-[0.3s];
+}
+
+.navlink {
+  @apply xl:text-[1rem] text-[28px] xl:ml-[2rem] ml-[1.5rem] leading-[1.125rem] hover:text-active cursor-pointer;
+}
+
+.nav--button {
+  @apply text-[1rem] leading-[1.125rem] hover:text-white hover:bg-active cursor-pointer bg-white text-darkGrey rounded-full transition-all duration-[0.2s];
+}
+
+.nav--button-disabled {
+  @apply text-[1rem] leading-[1.125rem] cursor-not-allowed bg-[#456673] text-darkGrey rounded-full;
+}
+
+.nav--button-footer {
+  @apply bg-active text-white rounded-full font-segoe font-[400] text-[16px] leading-[20px] mr-[1.5rem] cursor-pointer;
+}
+
+.dropdown {
+  @apply bg-[#112831e6] drop-shadow-lg;
+}
+
+.mobile-nav {
+  @apply fixed bg-darkGrey !h-screen !w-screen top-0 left-0 z-[11] flex-col pt-[4rem] translate-x-0 transform duration-500;
+}
+
+.mobile-nav.hided {
+  @apply translate-x-[100%] transform duration-500;
+}
+
+.largetitle {
+  @apply font-[700] xl:text-[54px] md:text-[40px] text-[28px] xl:leading-[58px] md:leading-[42px];
+}
+
+.title {
+  @apply font-[700] xl:text-[42px] md:text-[32px] text-[28px] xl:leading-[56px] leading-[36px];
+}
+
+.subtitle--wm {
+  @apply font-[400] xl:text-[18px] text-[16px] xl:leading-[22px] leading-[20px];
+}
+
+.subtitle {
+  @apply subtitle--wm mx-[0.5rem];
+}
+
+.card-title {
+  @apply font-[700] xl:text-[36px] text-[28px] leading-[100%];
+}
+
+.footer-link {
+  @apply font-[400] text-[16px] leading-[20px] mr-[1.5rem] hover:text-active cursor-pointer;
+}
+
+.card {
+  @apply box-shadow-sm px-[2rem] py-[1.95rem] bg-cardBg bg-cover bg-no-repeat rounded-[24px] relative z-[1] transition-all duration-[0.5s];
+}
+
+.article--card,
+.article--card .content,
+.partner--card,
+.partner--card .content,
+.card .content {
+  @apply transition-all duration-[0.5s];
+}
+
+.card--container:hover .card {
+  @apply scale-[1.015];
+}
+
+.article--card:hover .content,
+.partner--card:hover .content,
+.card--container:hover .card .content {
+  @apply scale-[1.02] transition-all duration-[0.5s];
+}
+
+.swiper-pagination-bullet {
+  @apply !w-[12px] !h-[12px];
+}
+
+.swal2-styled.swal2-confirm {
+  @apply !bg-white text-darkGrey hover:!bg-active hover:text-white !border-none !outline-none rounded-full font-segoe font-[400] text-[16px] leading-[20px] px-8 py-2;
+}
+
+.dashed-line::after {
+  @apply xl:block hidden absolute top-0 bottom-0 left-1/2 z-0 my-[2rem] mx-auto content-[""] border-dashed border-l-[2px] border-[#ffffff80];
+}
+
+.input {
+  @apply rounded-[12px] bg-[#e8f0fe] text-normal font-[400] text-[16px] leading-[21px] py-[0.6rem] px-[1rem] mt-[2px] outline-none;
+}
