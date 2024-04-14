@@ -20,7 +20,13 @@ const Team = () => {
         {team.map((member, index) => (
           <Link
             data-aos="fade-up"
-            data-aos-delay={isDesktop ? index * 250 : 0}
+            data-aos-delay={
+              isDesktop
+                ? index < 3
+                  ? index * 250
+                  : Math.floor(index / 3) * 250 + (index % 3) * 250
+                : 0
+            }
             href={`meet-the-team/${member.slug}`}
             key={index}
             className="bg-no-repeat aspect-square bg-cover bg-center flex flex-col justify-end cursor-pointer hover:scale-[1.025] transition-transform duration-700 ease-in-out"

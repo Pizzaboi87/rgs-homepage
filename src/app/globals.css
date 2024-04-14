@@ -26,6 +26,36 @@
   .drop-shadow-lg {
     filter: drop-shadow(0 0 20px #0000004d);
   }
+
+  .loading {
+    border-color: white transparent white transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+
+  .box {
+    transform-style: preserve-3d;
+    box-shadow: 0 25px 45px #0000000d;
+    border: 1px solid #ffffff80;
+    border-top: 1px solid #ffffffbf;
+    border-left: 1px solid #ffffffbf;
+    border-radius: 0.5rem;
+    background: #ffffff1b;
+    backdrop-filter: blur(2px);
+  }
+
+  .anim-1 {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .anim-2 {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.285, 0.61, 0.355, 1);
+  }
+
+  .anim-3 {
+    transform: rotate(1800deg);
+  }
 }
 
 * {
@@ -154,4 +184,24 @@ html {
 
 .input {
   @apply rounded-[12px] bg-[#e8f0fe] text-normal font-[400] text-[16px] leading-[21px] py-[0.6rem] px-[1rem] mt-[2px] outline-none;
+}
+
+.lds-hourglass:after {
+  @apply w-3 h-0 m-[8px] border-[100px] border-solid rounded-[50%] block content-[""] loading;
+}
+
+.container-box {
+  @apply bg-[#ffffff1b] md:bg-transparent rounded-lg md:rounded-none py-2 md:py-0 overflow-hidden flex flex-col items-center justify-center;
+}
+
+@keyframes lds-hourglass {
+  0% {
+    @apply anim-1;
+  }
+  50% {
+    @apply anim-2;
+  }
+  100% {
+    @apply anim-3;
+  }
 }

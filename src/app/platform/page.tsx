@@ -1,7 +1,13 @@
-import Missing from "@/components/Missing";
+import PlatformPage from "@/components/PlatformPage";
+
+import { DataProvider } from "@/context/data.context";
 
 const Platform = () => {
-  return <Missing type="page" />;
+  return (
+    <DataProvider>
+      <PlatformPage />
+    </DataProvider>
+  );
 };
 
 export default Platform;

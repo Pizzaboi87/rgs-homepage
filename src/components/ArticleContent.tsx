@@ -23,14 +23,14 @@ const ArticleContent: FC<ArticleContentType> = ({ articleContent }) => {
             ));
           case "image":
             return (
-              <figure className="pt-9 mb-[5rem]">
+              <figure key={index} className="pt-9 mb-[5rem]">
                 <img src={content.image} alt={content.alt} />
                 <figcaption className="pt-4">{content.caption}</figcaption>
               </figure>
             );
           case "list":
             return (
-              <ul className="list-disc mb-9 ml-6">
+              <ul key={index} className="list-disc mb-9 ml-6">
                 {content.list?.map((item, index) => (
                   <li key={index} className="text-[18px] leading-[22px] mb-8">
                     {Array.isArray(item) ? (

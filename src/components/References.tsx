@@ -17,7 +17,12 @@ const References: FC<Props> = ({ references }) => {
               {reference.reference}
               {reference.link ? ", available at: " : ""}
             </span>
-            <Link href={reference.link} target="_blank" rel="noreferrer">
+            <Link
+              href={reference.link}
+              target="_blank"
+              rel="noreferrer"
+              className="break-words"
+            >
               {reference.link}
             </Link>
           </li>
