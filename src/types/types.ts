@@ -173,12 +173,13 @@ export type CorrectedRevenueType = {
 export type SectorData = {
     [sector: string]: number;
 }
+
 export type SectorRevenueMap = {
     [year: number]: SectorData;
 }
 
-export type RevenueByCompany = {
-    name: string;
+export type RevenueByCategory = {
+    category: string;
     revenue: number;
 }
 
@@ -186,4 +187,13 @@ export type RevenueByCountry = {
     country: string;
     normalRevenue: number;
     greenRevenue: number;
+}
+
+export type CompanyData = {
+    [companies: string]: number;
+    [revenues: number]: number;
+}
+
+export type CompanyRevenueMap = {
+    [year: number]: CompanyData;
 }

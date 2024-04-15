@@ -11,8 +11,9 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "@/context/data.context";
 import { selectStyles } from "@/utils/selectStyles";
 import { sectorRevenues } from "@/utils/sectorRevenues";
-import { companySharing } from "@/utils/companySharing";
+import { categorySharing } from "@/utils/categorySharing";
 import { geography } from "@/utils/geography";
+import { companyRevenues } from "@/utils/companyRevenues";
 
 // window object does not exist during server side rendering, so we need to import it dynamically
 // to avoid window is not defined error
@@ -26,6 +27,9 @@ const DonutChart = dynamic(() => import("@/components/DonutChart"), {
   ssr: false,
 });
 const StackedChart = dynamic(() => import("@/components/StackedChart"), {
+  ssr: false,
+});
+const RadialChart = dynamic(() => import("@/components/RadialChart"), {
   ssr: false,
 });
 
@@ -201,9 +205,9 @@ const PlatformPage = () => {
             {firstSelector && (
               <Container
                 selector={firstSelector}
-                subtitle="Company Green Revenue Sharing"
+                subtitle="Revenues By Product Category"
               >
-                <TreeMap data={companySharing(firstPortfolio, firstYear)} />
+                <TreeMap data={categorySharing(firstPortfolio, firstYear)} />
               </Container>
             )}
           </div>
@@ -211,9 +215,33 @@ const PlatformPage = () => {
             {secondSelector && (
               <Container
                 selector={secondSelector}
-                subtitle="Company Green Revenue Sharing"
+                subtitle="Revenues By Product Category"
               >
-                <TreeMap data={companySharing(secondPortfolio, secondYear)} />
+                <TreeMap data={categorySharing(secondPortfolio, secondYear)} />
+              </Container>
+            )}
+          </div>
+          <div>
+            {firstSelector && (
+              <Container
+                selector={firstSelector}
+                subtitle="Top Green Companies By Revenue"
+              >
+                <RadialChart
+                  data={companyRevenues(firstPortfolio, firstYear)}
+                />
+              </Container>
+            )}
+          </div>
+          <div>
+            {secondSelector && (
+              <Container
+                selector={secondSelector}
+                subtitle="Top Green Companies By Revenue"
+              >
+                <RadialChart
+                  data={companyRevenues(secondPortfolio, secondYear)}
+                />
               </Container>
             )}
           </div>

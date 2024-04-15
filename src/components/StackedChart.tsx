@@ -118,7 +118,15 @@ export const StackedChart = (props: { data: RevenueByCountry[] }) => {
         breakpoint: 1000,
         options: {
           chart: {
-            width: 400,
+            width: 280,
+          },
+        },
+      },
+      {
+        breakpoint: 1100,
+        options: {
+          chart: {
+            width: 360,
           },
         },
       },

@@ -56,10 +56,17 @@ const DonutChart = (props: {
             height: 500,
           },
           legend: {
+            width: 340,
+            offsetX: 60,
+          },
+        },
+      },
+      {
+        breakpoint: 1100,
+        options: {
+          legend: {
             width: 400,
-            height: 145,
-            horizontalAlign: "center",
-            offsetX: 30,
+            offsetX: 80,
           },
         },
       },

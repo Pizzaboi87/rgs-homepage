@@ -63,11 +63,24 @@ const SemiDonutChart = (props: {
         breakpoint: 1000,
         options: {
           chart: {
-            width: 420,
+            width: 350,
           },
           grid: {
             padding: {
-              bottom: -250,
+              bottom: -240,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 1100,
+        options: {
+          chart: {
+            width: 330,
+          },
+          grid: {
+            padding: {
+              bottom: -220,
             },
           },
         },

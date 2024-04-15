@@ -1,13 +1,13 @@
 import ReactApexChart from "react-apexcharts";
 
-import { RevenueByCompany } from "@/types/types";
+import { RevenueByCategory } from "@/types/types";
 import { ApexOptions } from "apexcharts";
 
-const TreeMap = (props: { data: RevenueByCompany[] }) => {
+const TreeMap = (props: { data: RevenueByCategory[] }) => {
   const series: ApexAxisChartSeries = [
     {
       data: props.data.map((company) => ({
-        x: company.name,
+        x: company.category,
         y: company.revenue,
       })),
     },
@@ -67,7 +67,7 @@ const TreeMap = (props: { data: RevenueByCompany[] }) => {
             },
             {
               from: 0,
-              to: 200000000000,
+              to: 250000000000,
               color: "#52B12C",
             },
           ],
@@ -87,7 +87,15 @@ const TreeMap = (props: { data: RevenueByCompany[] }) => {
         breakpoint: 1000,
         options: {
           chart: {
-            width: 330,
+            width: 300,
+          },
+        },
+      },
+      {
+        breakpoint: 1100,
+        options: {
+          chart: {
+            width: 280,
           },
         },
       },
